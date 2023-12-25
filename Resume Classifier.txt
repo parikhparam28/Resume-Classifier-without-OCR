@@ -1,0 +1,30 @@
+﻿Resume Classifier: Visual Image Classification
+Dataset Details:
+* Dataset: Mixed collection of resume and non-resume images scrapped from Google images using the BeautifulSoup library
+* Organization: Manually segregated into 'resume' and 'non-resume' categories.
+* Size: Balanced representation for effective model training using training, testing, and validation set. 
+* Training Size: It has 178 resume images and 360 non-resume images
+* Testing Size: It has 33 resume images and 66 non-resume images
+Model Architecture:
+* Convolutional Neural Network (CNN)
+   * Input: Images resized to a uniform size (e.g., 150x150).
+   * Layers: Conv2D, MaxPooling2D, Flatten, Dropout, Dense.
+   * Activation: ReLU for hidden layers, Sigmoid for output layer (binary classification).
+Training Strategy:
+* Data Augmentation:
+   * Applied via ImageDataGenerator to increase dataset diversity.
+   * Techniques: Rotation, shifting, flipping, shear, rescaling, normalization, etc.
+* Regularization: L2 regularizer used to prevent overfitting
+* Optimizer: Adam optimizer.
+* Loss Function: Binary Crossentropy.
+* Epochs: 25 (Adjusted based on validation performance to prevent overfitting)
+Evaluation Metrics:
+* Precision: 0.8 (Measure of accurately predicted positives)
+* Recall: 1.0 (Proportion of actual positives identified correctly)
+* F1-score: 0.88 (Harmonic mean of precision and recall for balance)
+Results & Insights:
+* Performance: Achieved good precision and recall rates (>=80%).
+* Confusion Matrix: Visual representation of model's classification accuracy                        [ [ 5, 1 ], [0, 4] ]
+Conclusion:
+* Successfully developed a visual-based resume classifier using CNN.
+* Achieved robust performance metrics without utilizing OCR or textual features.
